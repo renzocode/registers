@@ -1,13 +1,19 @@
-export class Book {
+export interface BookInterface {
 
-	constructor(
-		public notation1 : string,
-		public notation2 : string,
-		public notation3 : string,
-		public notation4 : string,
-		public notation5 : string,
-		public photo? : string
-		){
+	notation1 : string;
+	notation2 : string;
+	notation3 : string;
+	notation4 : string;
+	notation5 : string;
+	notation6 : File;
 
-	}
+}
+
+export class Book implements BookInterface{
+	notation1 : string = null;
+	notation2 : string = null;
+	notation3 : string = null;
+	notation4 : string = null;
+	notation5 : string = null;
+	notation6 : File = null;
 }
