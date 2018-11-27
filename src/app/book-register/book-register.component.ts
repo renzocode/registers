@@ -23,13 +23,16 @@ export class BookRegisterComponent {
 	}
 
 
-	notation3 = ['Really Smart', 'Super Flexible',
-            'Super Hot', 'Weather Changer'];
+	notation3 = ['GRÚA DANIELI (L16A)', 'GRÚA DANIELI (L10A)',
+            'GRÚA E', 'GRÚA E2', 'GRÚA L18', 'GRÚA L19 -PORTICO', 'GRÚA JASO', 'GRÚA E1', 'GRÚA D', 'GRÚA P'];
+
+
+
 
   	submitted = false;
 
 
-  	model = new Book("s", "s", "t", "u", "a", "j");
+  	model = new Book("", "", "", "", "", "");
 
   	onSubmit() { this.submitted = true; }
 
