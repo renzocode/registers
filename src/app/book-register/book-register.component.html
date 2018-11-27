@@ -4,17 +4,17 @@
     		<div class="col">
       			
     		</div>
-    		<div class="col-6">
+    		<div class="col-lg-6 col-md-10">
     			<div [hidden]="submitted">
     				<div class="title_register">
 		  				<h2> Informe Pre-liminar</h2>
     				</div>
       				<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
-      					<div class="form-group submit-customer">
+      					<div class="form-group submit-customer-head">
       						<button type="submit" class="btn btn-primary btn-lg" (click)="submitted=true">Subir</button>
-    					</div>
+    					  </div>
   						<div class="form-group">
-    						<label for="notation_1">Que Ocurrió</label>
+    						<label for="notation_1" class="label_register">Que Ocurrió</label>
     						<input type="text" class="form-control" id="notation_1" required [(ngModel)]="model.notation1" name="notation_1" #notation_1="ngModel">
     						<div [hidden]="!(notation_1.invalid || notation_1.pristine) || notation_1.untouched" class="alert alert-danger">
     						requerido "Que ocurrió" información
@@ -22,7 +22,7 @@
   						</div>
 
   						<div class="form-group">
-    						<label for="notation_2">Cuando ocurió</label>
+    						<label for="notation_2" class="label_register">Cuando ocurió</label>
     						<input type="text" class="form-control" id="notation_2" required [(ngModel)]="model.notation2" name="notation2" #notation_2="ngModel">
     						<div [hidden]="!(notation_2.invalid || notation_2.pristine) || notation_2.untouched" class="alert alert-danger">
     						requerido "Cuando ocurió" información
@@ -31,31 +31,34 @@
 
 
   						<div class="form-group">
-    						<label for="notation_3">Donde ocurrió</label>
+    						<label for="notation_3" class="label_register">Donde ocurrió</label>
     						<select class="form-control"  id="power" required [(ngModel)]="model.notation3" name="notation3">
   								<option *ngFor="let pow of notation3" [value]="pow">{{pow}}</option>
   							</select>	
 
   						</div>
   						<div class="form-group">
-    						<label for="notation_4">Impacto en la seguridad</label>
+    						<label for="notation_4" class="label_register">Impacto en la seguridad</label>
     						<input type="text" class="form-control" id="notation_4" required [(ngModel)]="model.notation4" name="notation4" #notation_4="ngModel">
     						<div [hidden]="!(notation_4.invalid || notation_4.pristine) || notation_4.untouched" class="alert alert-danger">
     							requerido "Impacto en la seguridad" información
     						</div>
   						</div>
-  						<div class="form-group">
-    						<label for="notation_5">Hipótesis inicial</label>
+  						<div class="form-group"> 
+    						<label for="notation_5" class="label_register">Hipótesis inicial</label>
     						<input type="text" class="form-control" id="notation_5" required [(ngModel)]="model.notation5" name="notation5" #notation_5="ngModel">
     						<div [hidden]="!(notation_5.invalid || notation_5.pristine) || notation_5.untouched" class="alert alert-danger">
     							requirido "Hipótesis inicial" información
     						</div>
   						</div>
   						<div class="form-group">
-    						<label for="notation_6">Subir archivo</label>
+    						<label for="notation_6" class="label_register">Subir archivo</label>
     						<input type="file" class="form-control-file" id="notation_6" required [(ngModel)]="model.notation6" name="notation6">
     						
   						</div>
+              <div class="form-group submit-customer-bottom">
+                  <button type="submit" class="btn btn-primary btn-lg" (click)="submitted=true">Subir</button>
+              </div>
 					</form>
     			</div>
           <div [hidden]="!submitted">
