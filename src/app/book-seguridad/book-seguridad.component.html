@@ -28,14 +28,13 @@
     						requerido "Cuando ocurió" información
     						</div>
   						</div>	
-
-
+  						
   						<div class="form-group">
     						<label for="notation_3" class="label_register">Acto sub-estandar</label>
-    						<select class="form-control"  id="power" required [(ngModel)]="model.notation3" name="notation3">
-  								<option *ngFor="let pow of notation3" [value]="pow">{{pow}}</option>
-  							</select>	
-
+    						<input type="text" class="form-control" id="notation_4" required [(ngModel)]="model.notation4" name="notation4" #notation_4="ngModel">
+    						<div [hidden]="!(notation_4.invalid || notation_4.pristine) || notation_4.untouched" class="alert alert-danger">
+    							requerido "Impacto en la seguridad" información
+    						</div>
   						</div>
   						<div class="form-group">
     						<label for="notation_4" class="label_register">Observaciones</label>
