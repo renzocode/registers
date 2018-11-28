@@ -1,0 +1,37 @@
+.register_table{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.submit-customer{
+	text-align: right;
+}
+.title_register{
+	text-align: center;
+}
+
+
+@media(max-width: 767.98px){
+	.submit-customer-head{
+		display: none;
+	}
+	.submit-customer-bottom{
+		text-align: right;
+	}
+	.label_register{
+		margin-right: 5px !important;
+		margin-left: 5px !important;
+	}
+	.form-control{
+		margin-right: 40px !important;
+	}
+
+}
+
+@media(min-width: 768px){
+	.submit-customer-bottom{
+		display: none;
+	}
+	.submit-customer-head{
+		text-align: right;
+	}
+}

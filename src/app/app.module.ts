@@ -10,12 +10,18 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookRegisterComponent } from './book-register/book-register.component';
+import { BookSeguridadComponent } from './book-seguridad/book-seguridad.component';
 
 
 const appRoutes: Routes = [
   {
     path: 'book-register',
     component : BookRegisterComponent,
+    data :{ title: 'Book List'}
+  },
+  {
+    path: 'book-seguridad',
+    component : BookSeguridadComponent,
     data :{ title: 'Book List'}
   },
   {
@@ -30,7 +36,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BookRegisterComponent
+    BookRegisterComponent,
+    BookSeguridadComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

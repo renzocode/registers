@@ -1,22 +1,23 @@
-import { Injectable, ErrorHandler } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Book } from './book';
+import { Security } from './security';
+
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService implements ErrorHandler{
+export class ApiseguridadService {
 
-	private dbPath = '/data/inform';
+	private dbPath = '/data/securitypage';
 
 
-	bookRef : AngularFireList<Book> = null;
+	bookRef : AngularFireList<Security> = null;
 
   	constructor(private db: AngularFireDatabase) {
   		this.bookRef = db.list(this.dbPath);
   	}
 
-  	createRegister(register : Book) : void{
+  	createRegister(register : Security) : void{
   		this.bookRef.push(register);
   	}
 
