@@ -20,6 +20,11 @@ export class ApiService implements ErrorHandler{
   		this.bookRef.push(register);
   	}
 
+    getList() : any{
+      return  this.bookRef.valueChanges();
+      console.log(this.bookRef.valueChanges());
+    }
+
   	handleError(error : any){
   		if(error instanceof HttpErrorResponse){
   			console.error('Backend returned status code : ', error.status);

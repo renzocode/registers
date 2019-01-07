@@ -5,63 +5,108 @@
       			
     		</div>
     		<div class="col-lg-6 col-md-10">
-    			<div [hidden]="submitted">
-    				<div class="title_register">
-		  				<h2> HORA DE SEGURIDAD</h2>
-    				</div>
-      				<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
-      					<div class="form-group submit-customer-head">
-      						<button type="submit" class="btn btn-primary btn-lg" (click)="submitted=true">Subir</button>
-    					  </div>
-  						<div class="form-group">
-    						<label for="notation_1" class="label_register">Tema</label>
-    						<input type="text" class="form-control" id="notation_1" required [(ngModel)]="model.notation1" name="notation_1" #notation_1="ngModel">
-    						<div [hidden]="!(notation_1.invalid || notation_1.pristine) || notation_1.untouched" class="alert alert-danger">
-    						requerido "Tema" información
-    						</div>
-  						</div>
+          
+    			  <div [hidden]="submitted">
+            <div class="title_register">
+              <h2> HORA DE SEGURIDAD</h2>
+            </div>
+              <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+                  <div class="form-group submit-customer-head">
+                    <button type="submit" class="btn btn-primary btn-lg" (click)="submitted=true">Subir</button>
+                  </div>
+                <div class="form-group">
+                  <label for="notation_1" class="label_register">TEMA</label>
+                  <input type="text" class="form-control" id="notation_1" required [(ngModel)]="model.notation1" name="notation_1" #notation_1="ngModel">
+                  <div [hidden]="!(notation_1.invalid || notation_1.pristine) || notation_1.untouched" class="alert alert-danger">
+                  requerido "Tema" información
+                  </div>
+                </div>
 
-  						<div class="form-group">
-    						<label for="notation_2" class="label_register">Condicion Sub-estandar</label>
-    						<input type="text" class="form-control" id="notation_2" required [(ngModel)]="model.notation2" name="notation2" #notation_2="ngModel">
-    						<div [hidden]="!(notation_2.invalid || notation_2.pristine) || notation_2.untouched" class="alert alert-danger">
-    						requerido "Condicion Sub-estandar" información
-    						</div>
-  						</div>	
+                <div class="form-group">
+                  <label for="notation_2" class="label_register">LUGAR</label>
+                  <input type="text" class="form-control" id="notation_2" required [(ngModel)]="model.notation2" name="notation_2" #notation_2="ngModel">
+                  <div [hidden]="!(notation_2.invalid || notation_2.pristine) || notation_2.untouched" class="alert alert-danger">
+                  requerido "LUGAR" información
+                  </div>
+                </div> 
 
-  						<div class="form-group">
-    						<label for="notation_3" class="label_register">Acto sub-estandar</label>
-    						<input type="text" class="form-control" id="notation_4" required [(ngModel)]="model.notation3" name="notation3" #notation_3="ngModel">
-    						<div [hidden]="!(notation_3.invalid || notation_3.pristine) || notation_3.untouched" class="alert alert-danger">
-    							requerido "Acto sub-estandar" información
-    						</div>
-  						</div>
-  						<div class="form-group">
-    						<label for="notation_4" class="label_register">Observaciones</label>
-    						<input type="text" class="form-control" id="notation_4" required [(ngModel)]="model.notation4" name="notation4" #notation_4="ngModel">
-    						<div [hidden]="!(notation_4.invalid || notation_4.pristine) || notation_4.untouched" class="alert alert-danger">
-    							requerido "Observaciones" información
-    						</div>
-  						</div>
-  						<div class="form-group">
-    						<label for="notation_6" class="label_register">Images</label>
-    						<input type="file" class="form-control-file" id="notation_6" required [(ngModel)]="model.notation6" name="notation6">
-    						
-  						</div>
-              <div class="form-group submit-customer-bottom">
+                <div class="form-group">
+                  <label for="notation_3">MULTIPLICADOR/FACILITADOR</label>
+                  <select class="form-control"  id="power" required [(ngModel)]="model.notation3" name="power">
+                    <option *ngFor="let pow of multiplayers" [value]="pow">{{pow}}</option>
+                  </select> 
+
+                </div>
+
+                <div class="form-group">
+                  <label for="notation_4">TIPO DE EVENTO</label>
+                  <select class="form-control"  id="power" required [(ngModel)]="model.notation4" name="power">
+                    <option *ngFor="let pow of events" [value]="pow">{{pow}}</option>
+                  </select> 
+
+                </div>
+
+                <div class="form-group">
+                <label for="notation_5">COLABORADORES</label>
+                  <select class="form-control"  id="power" required [(ngModel)]="model.notation5" name="power">
+                    <option *ngFor="let pow of orders1" [value]="pow">{{pow}}</option>
+                  </select> 
+
+                </div>
+              <!--
+              <div [formGroup]="form" class="form-group">
+                <div formArrayName="orders">
+                  <div *ngFor="let order of form.controls.orders.controls; let i = index">
+                    <input type="checkbox" [formControlName]="i"> {{orders[i].name}}
+                  </div>
+                </div>
+                </div>
+              -->
+                <!--
+                <label formArrayName="orders" *ngFor="let order of form.controls.orders.controls; let i = index" >
+                  <input type="checkbox" [formControlName]="i" />
+                    {{orders[i].name }}
+                </label>
+              -->
+             
+                <div class="form-group">
+                  <label for="notation_6" class="label_register">OBSERVACION/SUGERENCIA COLABORADOR</label>
+                  <input type="text" class="form-control" id="notation_6" required [(ngModel)]="model.notation6" name="notation_6" #notation_6="ngModel">
+                  <div [hidden]="!(notation_6.invalid || notation_6.pristine) || notation_6.untouched" class="alert alert-danger">
+                    requerido "OBSERVACION/SUGERENCIA COLABORADOR" información
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="notation_7" class="label_register">OBSERVACION/SUGERENCIA MULTIPLICADOR FACILITADOR</label>
+                  <input type="text" class="form-control" id="notation_7" required [(ngModel)]="model.notation7" name="notation_7" #notation_7="ngModel">
+                  <div [hidden]="!(notation_7.invalid || notation_7.pristine) || notation_7.untouched" class="alert alert-danger">
+                    requerido "OBSERVACION/SUGERENCIA MULTIPLICADOR FACILITADOR" información
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="notation_8" class="label_register">IMAGES</label>
+                  <input type="file" class="form-control-file" id="notation_8" required [(ngModel)]="model.notation8" name="notation8">
+                </div>
+                <div class="form-group submit-customer-bottom">
                   <button type="submit" class="btn btn-primary btn-lg" (click)="submitted=true">Subir</button>
-              </div>
-					</form>
-    			</div>
-          <div [hidden]="!submitted">
-            <h4>You submitted successfully!</h4>
-            <button class="btn btn-success" (click)="newBookRegister()">Add</button>
-          </div>
-    		</div>
+                </div>
+              </form>
+            </div>
+            <div [hidden]="!submitted">
+              <h4>You submitted successfully!</h4>
+              <button class="btn btn-success" (click)="newBookRegister()">Add</button>
+            </div>
+          </div> 			
     		<div class="col">
-      			
     		</div>
+      			
+    		
   		</div>
 	</div>
+  </div>
 
-</div>
+
+
+<!--
+    			
+    	-->

@@ -2,15 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookRegisterComponent } from './book-register/book-register.component';
 import { BookSeguridadComponent } from './book-seguridad/book-seguridad.component';
+import { BookListComponent } from './book-list/book-list.component';
 
 
 const appRoutes: Routes = [
@@ -25,6 +27,11 @@ const appRoutes: Routes = [
     data :{ title: 'Book List'}
   },
   {
+    path: 'book-list',
+    component: BookListComponent,
+    data : { title : 'Book List'}
+  },
+  {
     path : '',
     redirectTo: '/book-register',
     pathMatch : 'full'
@@ -37,12 +44,14 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     BookRegisterComponent,
-    BookSeguridadComponent
+    BookSeguridadComponent,
+    BookListComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     AngularFireDatabaseModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

@@ -1,0 +1,30 @@
+<div class="col-md-6">
+	<h2 style="text-align: center;">REGISTRO</h2>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>EQUIPO</th>
+				<th>OBSERVACION DEL OPERADOR</th>
+				<th>SISTEM</th>
+				<th>TIPO DE FALLA</th>
+				<th>AVERIA/FALLA</th>
+				<th>MANTENIMIENTO DE TURNO</th>
+				<th>ACCIONES REALIZADAS</th>
+				<th>TIEMPO SUCEDIDO</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let item of items">
+				<td>{{item.notation1}}</td>
+				<td>{{item.notation2}}</td>
+				<td>{{item.notation3}}</td>
+				<td>{{item.notation4}}</td>
+				<td>{{item.notation5}}</td>	
+				<td>{{item.notation6}}</td>
+				<td>{{item.notation7}}</td>
+				<td>{{item.date}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<button (click)="exportAsXLSX()">Descagar archivos excel</button>
+</div>
