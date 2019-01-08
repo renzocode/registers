@@ -67,9 +67,45 @@
     							requerido "ACCIONES REALIZADAS" información
     						</div>
   						</div>
+
+              <div class="form-group">
+                <label for="notation_8">ADJUNTAR DIAGRAMA</label>
+                <input type="file" class="form-control-file" id="notation_8" >                
+              </div>
+
+              <div class="form-group">
+                <label for="notation_9" class="label_register">CAUSA RAIZ</label>
+                <input type="text" class="form-control" id="notation_9" required [(ngModel)]="model.notation9" name="notation_9" #notation_9="ngModel">
+                <div [hidden]="!(notation_9.invalid || notation_9.pristine) || notation_9.untouched" class="alert alert-danger">
+                  requerido "CAUSA RAIZ" información
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="notation_10" class="label_register">PLANES DE ACCION</label>
+                <input type="text" class="form-control" id="notation_10" required [(ngModel)]="model.notation10" name="notation_10" #notation_10="ngModel">
+                <div [hidden]="!(notation_10.invalid || notation_10.pristine) || notation_10.untouched" class="alert alert-danger">
+                  requerido "PLANES DE ACCION" información
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="notation_11" class="label_register">RESPONSABLE</label>
+                <input type="text" class="form-control" id="notation_11" required [(ngModel)]="model.notation11" name="notation_11" #notation_11="ngModel">
+                <div [hidden]="!(notation_11.invalid || notation_11.pristine) || notation_11.untouched" class="alert alert-danger">
+                  requerido "RESPONSABLE" información
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="notation_12" class="label_register">FECHA</label>
+                <input type="text" class="form-control" id="notation_12" required [(ngModel)]="model.notation12" name="notation_12" #notation_12="ngModel">
+                <div [hidden]="!(notation_12.invalid || notation_12.pristine) || notation_12.untouched" class="alert alert-danger">
+                  requerido "FECHA" información
+                </div>
+              </div>
   						<div class="form-group">
-    						<label for="notation_8">Subir archivo</label>
-    						<input type="file" class="form-control-file" id="notation_8" >    						
+    						<label for="notation_13">Subir archivo</label>
+    						<input type="file" class="form-control-file" id="notation_13" >    						
   						</div>
 					</form>
     			</div>
